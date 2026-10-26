@@ -1,3 +1,5 @@
+-- Research workflow: send code to a REPL in tmux, edit notebooks as scripts, LaTeX
+
 -- vim-slime settings have to be set before the plugin loads
 vim.g.slime_target = 'tmux'
 vim.g.slime_default_config = { socket_name = 'default', target_pane = '{right-of}' }
@@ -6,10 +8,9 @@ vim.g.slime_bracketed_paste = 1
 vim.g.slime_cell_delimiter = '# %%'
 
 vim.pack.add {
-  'https://github.com/jpalardy/vim-slime',
-  'https://github.com/GCBallesteros/jupytext.nvim',
-  'https://github.com/sindrets/diffview.nvim',
-  'https://github.com/lervag/vimtex',
+  gh 'jpalardy/vim-slime',
+  gh 'GCBallesteros/jupytext.nvim', -- needs `pip install jupytext`
+  gh 'lervag/vimtex',
 }
 
 require('jupytext').setup {}
